@@ -1,0 +1,273 @@
+/* Styles CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 70%;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.container h1 {
+    color: #333;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.weather-info {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.weather-info div {
+    margin-bottom: 10px;
+}
+
+.weather-info h2 {
+    color: #333;
+}
+
+.weather-info i {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.weather-info span {
+    vertical-align: middle;
+}
+
+.weather-info span.temperature {
+    font-size: 24px;
+}
+
+.weather-info span.pressure, .weather-info span.humidity {
+    color: #666;
+}
+
+.footer {
+    background-color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 70%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+}
+
+.navbar .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.navbar .menu ul li a:hover {
+    text-decoration: none;
+    background-color: #fff;
+    color: #007bff;
+}
+
+/* Styles pour la table */
+#weatherTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#weatherTable td {
+    border: none;
+    padding: 8px;
+    text-align: center;
+}
+
+#weatherTable:hover {
+    background-color: #f5f5f5;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.detail-column {
+    flex: 1;
+    margin-right: 20px; /* Ajoute une marge entre les colonnes */
+    /* au centre de la page */
+    text-align: center;
+}
+
+.detail-column:last-child {
+    margin-right: 0; /* Pas de marge à droite pour la dernière colonne */
+}
+
+.detail-column > div {
+    margin-bottom: 10px;
+}
+
+.plus-infos {
+    margin-top: 20px;
+    font-style: italic;
+    width: 100%; /* Pour occuper toute la largeur */
+    text-align: center; /* Centrer le texte */
+}
+
+.plus-infos a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.plus-infos {
+    margin-top: 25px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.plus-infos a {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.weather-card.active-row {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.weather-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.weather-card:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.weather-info > div {
+    flex: 1; /* Chaque élément prend une partie égale du conteneur */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#locationIcon {
+    margin-left: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.location {
+    margin-right: 10px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 0;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex; /* Utiliser Flexbox */
+    align-items: center; /* Aligner les éléments verticalement */
+    justify-content: center; /* Aligner les éléments horizontalement */
+}
+
+.location {
+    display: flex; /* Utiliser Flexbox */
+    align-items: center; /* Aligner les éléments verticalement */
+}
+
+#cityInput {
+    flex: 1; /* Le champ de saisie prendra tout l'espace restant */
+    margin-left: 10px; /* Ajouter une marge à gauche pour séparer les éléments */
+}
+
+button {
+    margin-left: 10px; /* Ajouter une marge à gauche pour séparer les éléments */
+}

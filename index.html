@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://erikflowers.github.io/weather-icons/css/weather-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles CSS */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <h1>METEO APP</h1>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/AppliMeteo">Accueil</a></li>
+                        <li><a href="#Aide">Aide</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>METEO APP</h1>
+        <div class="search">
+            <button class="location" onclick="getLocation()">
+                Me localiser
+                <i class="fas fa-map-marker-alt" id="locationIcon"></i>
+            </button>
+            <input type="text" id="cityInput" placeholder="Entrez le nom de la ville">
+            <button onclick="getWeather()">Obtenir la météo</button>            
+        </div>
+        <div class="weather-info" id="weatherContainer">
+            <!-- Les informations météo seront affichées ici -->
+        </div>        
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Météo App. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
