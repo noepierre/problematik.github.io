@@ -4,13 +4,14 @@
 }
 
 #board {
-    display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(9, 40px); /* 9 colonnes de 40px chacune */
+    grid-template-rows: repeat(9, 40px); /* 9 lignes de 40px chacune */
     border: 2px solid black;
-    padding: 5px;
+    width: 360px; /* Taille totale de la grille = 9 * 40px */
 }
 
 .square {
-    display: inline-block;
     width: 40px;
     height: 40px;
     border: 1px solid black;
