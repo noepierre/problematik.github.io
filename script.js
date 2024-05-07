@@ -1,13 +1,18 @@
 const BOARD_SIZE = 9;
-let board = [];
+let board = [
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9]
+];
 
 function initializeBoard() {
-    for (let i = 0; i < BOARD_SIZE; i++) {
-        board.push([]);
-        for (let j = 0; j < BOARD_SIZE; j++) {
-            board[i].push(0);
-        }
-    }
+    // Pas besoin d'initialiser la grille car elle est déjà remplie avec les numéros initiaux.
 }
 
 function renderBoard() {
@@ -49,7 +54,7 @@ function solveSudoku() {
 function solve() {
     let emptyCell = findEmptyCell();
     if (!emptyCell) {
-        return true; // Sudoku solved
+        return true;
     }
 
     let row = emptyCell[0];
@@ -63,11 +68,11 @@ function solve() {
                 return true;
             }
 
-            board[row][col] = 0; // backtrack
+            board[row][col] = 0; 
         }
     }
 
-    return false; // Trigger backtracking
+    return false;
 }
 
 function isValidBoard() {
@@ -89,7 +94,7 @@ function findEmptyCell() {
             }
         }
     }
-    return null; // No empty cell found
+    return null;
 }
 
 function isSafe(row, col, num) {
@@ -130,8 +135,17 @@ function isSafeInBox(startRow, startCol, num) {
 }
 
 function resetBoard() {
-    board = [];
-    initializeBoard();
+    board = [
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+    ];
     renderBoard();
 }
 
