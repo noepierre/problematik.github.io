@@ -78,8 +78,10 @@ function solve() {
 function isValidBoard() {
     for (let i = 0; i < BOARD_SIZE; i++) {
         for (let j = 0; j < BOARD_SIZE; j++) {
-            if (board[i][j] !== 0 && !isSafe(i, j, board[i][j])) {
-                return false;
+            if (board[i][j] !== 0) {
+                if (!isSafe(i, j, board[i][j])) {
+                    return false;
+                }
             }
         }
     }
