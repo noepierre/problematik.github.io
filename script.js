@@ -22,7 +22,12 @@ function renderBoard() {
             square.contentEditable = true;
             square.addEventListener("input", () => {
                 const value = parseInt(square.textContent) || 0;
-                board[i][j] = value;
+                if (value >= 0 && value <= 9) {
+                    board[i][j] = value;
+                } else {
+                    square.textContent = "";
+                    board[i][j] = 0;
+                }
             });
             boardDiv.appendChild(square);
         }
@@ -30,10 +35,14 @@ function renderBoard() {
 }
 
 function solveSudoku() {
-    if (solve()) {
-        renderBoard();
+    if (isValidBoard()) {
+        if (solve()) {
+            renderBoard();
+        } else {
+            alert("No solution exists!");
+        }
     } else {
-        alert("No solution exists!");
+        alert("Invalid Sudoku board!");
     }
 }
 
@@ -59,6 +68,17 @@ function solve() {
     }
 
     return false; // Trigger backtracking
+}
+
+function isValidBoard() {
+    for (let i = 0; i < BOARD_SIZE; i++) {
+        for (let j = 0; j < BOARD_SIZE; j++) {
+            if (board[i][j] !== 0 && !isSafe(i, j, board[i][j])) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 function findEmptyCell() {
