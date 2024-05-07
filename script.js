@@ -40,15 +40,8 @@ function renderBoard() {
 }
 
 function solveSudoku() {
-    if (isValidBoard()) {
-        if (solve()) {
-            renderBoard();
-        } else {
-            alert("No solution exists!");
-        }
-    } else {
-        alert("Invalid Sudoku board!");
-    }
+    solve();
+    renderBoard();
 }
 
 function solve() {
@@ -73,19 +66,6 @@ function solve() {
     }
 
     return false;
-}
-
-function isValidBoard() {
-    for (let i = 0; i < BOARD_SIZE; i++) {
-        for (let j = 0; j < BOARD_SIZE; j++) {
-            if (board[i][j] !== 0) {
-                if (!isSafe(i, j, board[i][j])) {
-                    return false;
-                }
-            }
-        }
-    }
-    return true;
 }
 
 function findEmptyCell() {
