@@ -5,6 +5,8 @@
 
 #board {
     display: inline-block;
+    border: 2px solid black;
+    padding: 5px;
 }
 
 .square {
@@ -14,6 +16,7 @@
     border: 1px solid black;
     text-align: center;
     line-height: 40px;
+    font-size: 20px; /* Pour que les chiffres soient bien centrés */
 }
 
 button {
